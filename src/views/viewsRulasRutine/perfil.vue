@@ -1,0 +1,199 @@
+<template>
+  <div>
+    <div class="container">
+      <br />
+      <div class="row" id="card-user">
+        <div class="col-sm">
+          <div class="card">
+            <div class="card-img text-center">
+              <img
+                src="../../assets/rulasRutineAssets/Usuario-navbar.png"
+                class="card-img-star"
+                id="perfilImg"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ user.name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ user.lastName }}</li>
+              <li class="list-group-item">{{ user.age }}</li>
+              <li class="list-group-item">{{ user.email }}</li>
+            </ul>
+            <div class="card-body text-center">
+              <button type="button" class="btn btn-info" style="width: 100%">
+                Editar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="detalles">
+            <div class="detalles-info text-center">
+              <br />
+              <label for="">Peso actual</label>
+              <p>{{pesos}}</p>
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Actualiza tu peso
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Actulizar peso
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="col-sm">
+                <span>Peso</span>
+                <input type="text" name="" id="" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Cacelar
+            </button>
+            <button type="button" class="btn btn-success">Actualizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "ProfileView",
+  components: {},
+  data() {
+    return {
+      user: {},
+      pesos: "",
+      error: false,
+      error_msg: "",
+      URL: process.env.VUE_APP_API_HOST,
+    };
+  },
+  async mounted() {
+    if (localStorage.token) {
+      console.log("existe");
+    } else {
+      localStorage.token = "";
+    }
+    if (localStorage.token != "") {
+      this.getPerfil();
+    }
+  },
+  methods: {
+    login() {
+      let json = {
+        email: this.email,
+        password: this.password,
+      };
+      axios.post(this.URL + "usr/log_in", json).then((data) => {
+        console.log(data);
+        console.log(data);
+        localStorage.token = data.data.token;
+        this.error = false;
+        this.$router.push("/dashboard");
+      });
+    },
+    getPerfil() {
+      axios
+        .get(process.env.VUE_APP_API_HOST + "usr/profile", {
+          headers: {
+            Authorization: `Bearer ${localStorage.token}`,
+          },
+        })
+        .then((response) => {
+          this.user = response.data.Perfil;
+          axios
+            .get(process.env.VUE_APP_API_HOST + "peso/peso_perdido", {
+              headers: {
+                Authorization: `Bearer ${localStorage.token}`,
+              },
+            })
+            .then((response) => {
+              this.pesos = response.data;
+            })
+            .catch((e) => (this.err = e));
+        })
+        .catch((e) => (this.err = e));
+    },
+  },
+};
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.container {
+  font-family: "Bebas Neue";
+}
+
+.card {
+  width: 100%;
+}
+
+#perfilImg {
+  width: 150px;
+}
+
+.detalles {
+  border-radius: 10px;
+  width: 100%;
+  background: #3c4048;
+  height: 200px;
+}
+
+.detalles-info {
+  display: grid;
+  color: #eaeaee;
+}
+
+.detalles-info label {
+  color: #00abb3;
+}
+
+@media (max-width: 500px) {
+  .perfilImg {
+    width: 90px;
+  }
+}
+</style>

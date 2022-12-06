@@ -1,6 +1,7 @@
 //RulasRutine
 import Login from '../views/viewsRulasRutine/login.vue';
 import Registro from '../views/viewsRulasRutine/register.vue';
+import tablaUsuariosVue from '../views/viewsRulasRutine/tabla-usuarios.vue';
 
 //other
 import Vue from 'vue'
@@ -23,6 +24,11 @@ import alerta from '../views/testAlertas.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/usuarios',
+    name: 'usuarios',
+    component: tablaUsuariosVue
+  },
   {
     path: '/',
     name: 'login',

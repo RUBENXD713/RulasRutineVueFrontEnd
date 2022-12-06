@@ -2,6 +2,11 @@
 import Login from '../views/viewsRulasRutine/login.vue';
 import Registro from '../views/viewsRulasRutine/register.vue';
 import tablaUsuariosVue from '../views/viewsRulasRutine/tabla-usuarios.vue';
+import Profile from '../views/viewsRulasRutine/perfil.vue';
+import Historial from '../views/viewsRulasRutine/historial.vue';
+import UpdateUser from '../views/viewsRulasRutine/editarPerfil.vue';
+import RegistrarPeso from '../views/viewsRulasRutine/registrarPeso.vue';
+import Felicidades from '../views/viewsRulasRutine/felicidades.vue';
 
 //other
 import Vue from 'vue'
@@ -38,6 +43,31 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Registro
+  },
+  {
+    path: '/register_weight',
+    name: 'register_weight',
+    component: RegistrarPeso
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
+  },
+  {
+    path: '/history',
+    name: 'history',
+    component: Historial
+  },
+  {
+    path: '/update_profile',
+    name: 'update_profile',
+    component: UpdateUser
+  },
+  {
+    path: '/congratulations',
+    name: 'congratulations',
+    component: Felicidades
   },
   {
     path: '/dashboard',

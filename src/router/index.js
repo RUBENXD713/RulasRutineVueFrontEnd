@@ -1,6 +1,10 @@
+//RulasRutine
+import Login from '../views/viewsRulasRutine/login.vue';
+import Registro from '../views/viewsRulasRutine/register.vue';
+
+//other
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/viewsRulasRutine/login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Nuevo from '../views/NuevaCita.vue'
 import clientes from '../views/Clientes.vue'
@@ -14,6 +18,8 @@ import notfount from '../views/error404.vue'
 import alerta from '../views/testAlertas.vue'
 //import Consultar from '../views/ConsultaMascota.vue' 
 
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -21,6 +27,11 @@ const routes = [
     path: '/',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Registro
   },
   {
     path: '/dashboard',

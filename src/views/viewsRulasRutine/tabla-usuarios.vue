@@ -20,7 +20,13 @@
                     </thead>
                     <tbody class="text-center">
                         <tr>
-                            
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td class="form-group">
                                 <button class="btn btn-info mt-1"
                                     style="font-size: auto; width: auto; margin-right: 10px;">editar</button>
@@ -29,6 +35,8 @@
                         </tr>
                     </tbody>
                 </table>
+                <!-- <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"
+                    nextLabel="Siguente"></pagination-controls> -->
             </div>
             <div class="btns text-center">
                 <button class="btn btn-info" >¿Quieres agregar un entrenador?</button>
@@ -39,9 +47,14 @@
 </template>
 
 <script>
+// import axios from "axios";
+import Header from '@/components/Header.vue'
+
 export default {
     name: "UsuariosView",
-    components: {},
+    components: {
+        Header
+    },
     data() {
         return {
             fields: ['Nombre', 'Apellidos', 'Edad', 'Email', 'Experiencia', 'Rol', 'Acciones'],

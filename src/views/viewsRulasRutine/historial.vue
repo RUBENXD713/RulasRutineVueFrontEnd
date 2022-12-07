@@ -1,47 +1,52 @@
 <template>
-  <div>
-    <div class="container">
-      <Header />
-      <div class="title bg-white text-end mb-5">
-        <h5 id="titulo">Historial</h5>
-      </div>
-      <div class="row mt-4 mb-5 justify-content-center">
-        <div class="col-lg-10 col-12">
-          <div class="card">
-            <div class="card-body text-center">
-              <div class="row align-items-* mt-2">
-                <div class="col-sm">
-                  <h3>Tu peso Inicial:</h3>
-                </div>
-                <div class="col-sm">
-                  <h3 formControlName="peso">{{ pesos.first }} <sup>KG</sup></h3>
-                </div>
+<div>
+    <Header/>
+  <div class="title bg-white text-end mb-5">
+    <h1 id="titulo">Historial</h1>
+  </div>
+  <div class="container"> 
+    <div class="row mt-4 mb-5 justify-content-center">
+      <div class="col-lg-8 col-12">
+        <div class="card">
+          <div class="card-body text-center">
+            <div class="row align-items-* mt-2">
+              <div class="col-sm-6">
+                <h3>Tu peso Inicial:</h3>
               </div>
-    
-            </div>
-            <div class="row align-items-* mt-4">
-              <div class="col-sm">
-                <h3 v-if="(pesos.perdio > 0)">Peso Perdido:</h3>
-                <h3 v-if="(pesos.perdio < 0)">Peso Ganado:</h3>
-              </div>
-              <div class="col-sm">
-                <h2>{{ pesos.perdio }} <sup>Kg</sup></h2>
+              <div class="col-sm-4">
+                <h3 formControlName="peso">{{pesos.first}} <sup>KG</sup></h3>
               </div>
             </div>
-            <div class="row align-items-start mt-3">
-              <div class="col-sm">
-                <h3>Tu peso actual:</h3>
-              </div>
-              <div class="col-sm">
-                <h2>{{ pesos.last }} <sup>KG</sup></h2>
-              </div>
+           
+                   
+          <div class="row align-items-* mt-4">
+            <div class="col-sm-6">
+              <h3 v-if="(pesos.perdio > 0)">Peso Perdido:</h3>
+              <h3 v-if="(pesos.perdio < 0)">Peso Ganado:</h3>
+              <h3 v-if="(pesos.perdio == 0)">Peso Perdido:</h3>
+            </div>
+            <div class="col-sm-4">
+              <h2>{{pesos.perdio}} <sup>Kg</sup></h2>
+            </div>
+          </div>
+          <div class="row align-items-start mt-3">
+            <div class="col-sm-6">
+              <h3>Tu peso actual:</h3>
+            </div>
+            <div class="col-sm-4">
+              <h2>{{pesos.last}} <sup>KG</sup></h2>
             </div>
           </div>
         </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-12" style="text-align:center"> 
+        <span style="color:aliceblue; font-size:13em" class="material-symbols-outlined">sports_gymnastics</span> 
       </div>
     </div>
-    <Footer />
   </div>
+  <Footer />
+</div>
 </template>
 
 <script>

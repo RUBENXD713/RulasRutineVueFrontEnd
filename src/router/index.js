@@ -15,10 +15,6 @@ import Blog from '../views/viewsRulasRutine/Blog.vue'
 import RutinaEjercicio from '@/views/viewsRulasRutine/Rutina-Ejercicio.vue'
 import prueba from '@/views/viewsRulasRutine/prueba.vue'
 
-import Blog from '../views/viewsRulasRutine/Blog.vue'
-import RutinaEjercicio from '@/views/viewsRulasRutine/Rutina-Ejercicio.vue'
-import prueba from '@/views/viewsRulasRutine/prueba.vue'
-
 //other
 import Vue from 'vue'
 import VueRouter from 'vue-router'

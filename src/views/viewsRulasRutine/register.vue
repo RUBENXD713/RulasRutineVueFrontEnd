@@ -42,7 +42,7 @@
             <div class="row text-center mt-4">
               <span>¿Ya tienes cuenta?</span>
               <div>
-                <a href="/login">Iniciar Sesión</a>
+                <a href=""  v-on:click="goToPage('/login')">Iniciar Sesión</a>
               </div>
             </div>
           </form>
@@ -85,9 +85,21 @@ export default {
       };
       axios.post(this.URL + "usr/sign_in", json).then((data) => {
         console.log(data);
-        //localStorage.token = data.data.token;
         this.error = false;
-        this.$router.push("/dashboard");
+        this.login();
+        this.$router.push("/register_weight");
+      });
+    }, goToPage(page) {
+      this.$router.push(page);
+    },
+    login() {
+      let json = {
+        email: this.email,
+        password: this.password,
+      };
+      axios.post(this.URL + "usr/log_in", json).then((data) => {
+        localStorage.token = data.data.token;
+        this.error = false;
       });
     },
   },

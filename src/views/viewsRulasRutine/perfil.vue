@@ -22,7 +22,7 @@
               <li class="list-group-item">{{ user.email }}</li>
             </ul>
             <div class="card-body text-center">
-              <button type="button" class="btn btn-info" style="width: 100%">
+              <button type="button" class="btn btn-info" style="width: 100%" v-on:click="goToPage('/update_profile')">
                 Editar
               </button>
             </div>
@@ -33,14 +33,13 @@
             <div class="detalles-info text-center">
               <br />
               <label for="">Peso actual</label>
-              <p>{{pesos.last}}</p>
+              <p>{{ pesos.last }}</p>
               <!-- Button trigger modal -->
               <button
                 type="button"
                 class="btn btn-primary"
                 data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
+                data-bs-target="#exampleModal">
                 Actualiza tu peso
               </button>
             </div>
@@ -55,8 +54,8 @@
       id="exampleModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+      aria-hidden="true">
+
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -71,22 +70,15 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form action="">
+            <form action="" v-on:submit.prevent="setWeight">
               <div class="col-sm">
                 <span>Peso</span>
-                <input type="text" name="" id="" class="form-control" />
+                <input type="text" name="" id="" class="form-control" v-model="peso"/>
               </div>
-            </form>
+              <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Actualizar</button>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-danger"
-              data-bs-dismiss="modal"
-            >
-              Cacelar
-            </button>
-            <button type="button" class="btn btn-success">Actualizar</button>
+            </form>
           </div>
         </div>
       </div>
@@ -104,6 +96,7 @@ export default {
   data() {
     return {
       user: {},
+      peso:"",
       pesos: "",
       error: false,
       error_msg: "",
@@ -153,6 +146,23 @@ export default {
             .catch((e) => (this.err = e));
         })
         .catch((e) => (this.err = e));
+    },
+    goToPage(page) {
+      this.$router.push(page);
+    },
+    setWeight() {
+      let json = {
+       peso:this.peso
+      };
+
+      axios.post(process.env.VUE_APP_API_HOST + "peso/add_weight", json, {
+          headers: {
+            Authorization: `Bearer ${localStorage.token}`,
+          },
+        }).then((response) => {
+        console.log(response);
+        this.error = false;
+      });
     },
   },
 };

@@ -37,12 +37,17 @@ Vue.use(VueRouter)
 const routes = [
   // RUTAS NUEVAS - INICIO rulas routine
   {
+    path: '/',
+    name: 'Blog',
+    component: Blog
+  },
+  {
     path: '/usuarios',
     name: 'usuarios',
     component: tablaUsuariosVue
   },
   {
-    path: '/',
+    path: '/login',
     name: 'login',
     component: Login
   },
@@ -55,11 +60,6 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Registro
-  },
-  {
-    path: '/Blog',
-    name: 'Blog',
-    component: Blog
   },
   {
     path: '/Rutina-Ejercicio',

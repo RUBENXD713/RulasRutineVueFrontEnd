@@ -1,6 +1,43 @@
 <template>
   <div>
-    
+    <!-- Footer -->
+    <div class="footter">
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <figure>
+                        <a href="#">
+                            <img loading="lazy" src="../assets/rulasRutineAssets/logo.png" alt="Logo de SLee Dw" />
+                        </a>
+                    </figure>
+                </div>
+                <div class="box" id="about">
+                    <h2 style="font-size: 30px">SOBRE NOSOTROS</h2>
+                    <p style="font-size: 20px">
+                        No tienes tiempo? no te preocupes Rulas Rutine es una pagina
+                        dedicada a brindar servicios de ejercicios desde tu casa
+                    </p>
+                    <p style="font-size: 20px">
+                        Rulas Rutine tiene ejercicios dedicados a cualquier tipo de cuerpo
+                        para que puedas entrenar sin lastimarte.
+                    </p>
+                </div>
+                <div class="box">
+                    <h2>SIGUENOS</h2>
+                    <div class="red-social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2022 <b>Rulas Rutine</b> - Todos los Derechos
+                    Reservados.</small>
+            </div>
+        </footer>
+    </div>
   </div>
 </template>
 
@@ -23,214 +60,97 @@ export default {
 
 
 <style scoped>
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
-* {
-    padding: 0;
-    margin: 0;
+.footter {
+  position: relative;  
+  background: #3C4048;
+  width: 100%;
+  height: 300px;
+  font-family: 'Bebas Neue';
+  bottom: 0px;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
+.pie-pagina {
+  width: 100%;
+  background-color: #0a141d;
 }
 
-header {
-    text-align: center;
-    padding-top: 100px;
-    margin-bottom: 300px;
-    font-size: 35px;
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
 }
 
-header h2 {
-    color: #f0525f;
+.pie-pagina .grupo-1 .box figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-header span {
-    color: #eaa03f;
+.pie-pagina .grupo-1 .box figure img {
+  width: 250px;
 }
 
-/* The footer is fixed to the bottom of the page */
-
-footer {
-    position:absolute;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
+.pie-pagina .grupo-1 .box h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
 }
 
-@media (max-height:800px) {
-    footer {
-        position: static;
-    }
-    header {
-        padding-top: 40px;
-    }
+.pie-pagina .grupo-1 .box p {
+  color: #efefef;
+  margin-bottom: 10px;
 }
 
-.footer-distributed {
-    background-color: #2d2a30;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    font: bold 16px sans-serif;
-    padding: 50px 50px 60px 50px;
-    margin-top: 80px;
+.pie-pagina .grupo-1 .red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  margin-right: 10px;
+  background-color: #0d2033;
+  text-align: center;
+  transition: all 300ms ease;
 }
 
-.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
-    display: inline-block;
-    vertical-align: top;
+.pie-pagina .grupo-1 .red-social a:hover {
+  color: aqua;
 }
 
-/* Footer left */
-
-.footer-distributed .footer-left {
-    width: 30%;
+.pie-pagina .grupo-2 {
+  background-color: #0a1a2a;
+  padding: 15px 10px;
+  text-align: center;
+  color: #fff;
 }
 
-.footer-distributed h3 {
-    color: #ffffff;
-    font: normal 36px 'Cookie', cursive;
-    margin: 0;
+.pie-pagina .grupo-2 small {
+  font-size: 15px;
 }
 
-
-.footer-distributed h3 span {
-    color: #e0ac1c;
+.icon-social {
+  transition: 300ms;
+  cursor: pointer;
 }
 
-/* Footer links */
-
-.footer-distributed .footer-links {
-    color: #ffffff;
-    margin: 20px 0 12px;
+.icon-social:hover {
+  transform: scale(1.1);
 }
 
-.footer-distributed .footer-links a {
-    display: inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color: inherit;
+@media screen and (max-width:800px) {
+  .pie-pagina .grupo-1 {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
 }
 
-.footer-distributed .footer-company-name {
-    color: #8f9296;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-}
-
-/* Footer Center */
-
-.footer-distributed .footer-center {
-    width: 35%;
-}
-
-.footer-distributed .footer-center i {
-    background-color: #33383b;
-    color: #ffffff;
-    font-size: 25px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
-}
-
-.footer-distributed .footer-center i.fa-envelope {
-    font-size: 17px;
-    line-height: 38px;
-}
-
-.footer-distributed .footer-center p {
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin: 0;
-}
-
-.footer-distributed .footer-center p span {
-    display: block;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 2;
-}
-
-.footer-distributed .footer-center p a {
-    color: #e0ac1c;
-    text-decoration: none;
-    ;
-}
-
-/* Footer Right */
-
-.footer-distributed .footer-right {
-    width: 30%;
-}
-
-.footer-distributed .footer-company-about {
-    line-height: 20px;
-    color: #92999f;
-    font-size: 13px;
-    font-weight: normal;
-    margin: 0;
-}
-
-.footer-distributed .footer-company-about span {
-    display: block;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.footer-distributed .footer-icons {
-    margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #33383b;
-    border-radius: 2px;
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 3px;
-    margin-bottom: 5px;
-}
-
-.footer-distributed .footer-icons #face:hover {
-    background-color: #3F71EA;
-}
-.footer-distributed .footer-icons #insta:hover {
-    background-color: #EF2F88;
-
-}.footer-distributed .footer-icons #tw:hover {
-    background-color: #2FA4FF;
-}
-.footer-distributed .footer-icons #yt:hover {
-    background-color: #FF0000;
-}
-
-.footer-links a:hover {
-    color: #3F71EA;
-}
-
-@media (max-width: 880px) {
-    .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
-        display: block;
-        width: 100%;
-        margin-bottom: 40px;
-        text-align: center;
-    }
-    .footer-distributed .footer-center i {
-        margin-left: 0;
-    }
-}
 </style>

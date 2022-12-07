@@ -1,49 +1,29 @@
 <template>
-<div class="container">
-    <div class="mt-4">
-        <h3 class="text-light">
-            usuarios
-        </h3>
-        <div class=" text-center">
-            <b-table class="text-light">
-                <thead class="text-center">
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellidos</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Experiencia</th>
-                        <th scope="col">Rol</th>
-                        <th scope="col">Acción</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="form-group">
-                            <button class="btn btn-info mt-1"
-                                style="font-size: auto; width: auto; margin-right: 10px;">editar</button>
-                            <button class="btn btn-danger mt-1">eliminar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </b-table>
-            <!-- <pagination-controls (pageChange)="page = $event" previousLabel="Anterior"
-                nextLabel="Siguente"></pagination-controls> -->
-        </div>
-        <div class="btns text-center">
-            <button class="btn btn-info">¿Quieres agregar un entrenador?</button>
-        </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Experiencia</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tony</td>
+                    <td>Stark Avenger</td>
+                    <td>23</td>
+                    <td>ejemplo@ejemplo.com</td>
+                    <td>3</td>
+                    <td>usuario</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <br>
-</div>
 </template>
 
 <script>
@@ -52,7 +32,7 @@ export default {
     components: {},
     data() {
         return {
-            
+            fields: ['Nombre', 'Apellidos', 'Edad', 'Email', 'Experiencia', 'Rol', 'Acciones'],
         }
     },
 }

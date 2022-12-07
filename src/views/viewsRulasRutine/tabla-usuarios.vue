@@ -1,28 +1,40 @@
 <template>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Experiencia</th>
-                    <th scope="col">Rol</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tony</td>
-                    <td>Stark Avenger</td>
-                    <td>23</td>
-                    <td>ejemplo@ejemplo.com</td>
-                    <td>3</td>
-                    <td>usuario</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="container">
+        <div class="mt-4">
+            <h3 class="text-light">
+                usuarios
+            </h3>
+            <div class="table-responsive text-center">
+                <table class="table text-light">
+                    <thead class="text-center">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Experiencia</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr>
+                            
+                            <td class="form-group">
+                                <button class="btn btn-info mt-1"
+                                    style="font-size: auto; width: auto; margin-right: 10px;">editar</button>
+                                <button class="btn btn-danger mt-1">eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btns text-center">
+                <button class="btn btn-info" >¿Quieres agregar un entrenador?</button>
+            </div>
+        </div>
+        <br>
     </div>
 </template>
 

@@ -6,6 +6,7 @@ import altaEntrenadores from '../views/viewsRulasRutine/altaEntrenadores.vue'
 import makeRoutine from '../views/viewsRulasRutine/makeRoutine.vue'
 import Niveles from '../views/viewsRulasRutine/niveles.vue'
 import tablaUsuariosVue from '../views/viewsRulasRutine/tabla-usuarios.vue'
+import tablaEjerciciosVue from '@/views/viewsRulasRutine/tabla-ejercicios.vue'
 import Profile from '../views/viewsRulasRutine/perfil.vue'
 import Historial from '../views/viewsRulasRutine/historial.vue'
 import UpdateUser from '../views/viewsRulasRutine/editarPerfil.vue'
@@ -37,7 +38,12 @@ Vue.use(VueRouter)
 const routes = [
   // RUTAS NUEVAS - INICIO rulas routine
   {
-    path: '/usuarios',
+    path: '/tabla-ejercicios',
+    name: 'tabla-ejercicios',
+    component: tablaEjerciciosVue
+  },
+  {
+    path: '/tabla-usuarios',
     name: 'usuarios',
     component: tablaUsuariosVue
   },

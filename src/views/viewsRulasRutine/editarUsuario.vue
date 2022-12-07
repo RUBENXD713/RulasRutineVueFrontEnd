@@ -38,7 +38,7 @@
                   </div>
                   <br><br>
                   <div class="col-sm">
-                    <button class="btn btn-danger" v-on:click="goToPage('/profile')">Cancelar</button>
+                    <button class="btn btn-danger" v-on:click="goToPage('/tabla-usuarios')">Cancelar</button>
                   </div>
                 </div>
               </form>

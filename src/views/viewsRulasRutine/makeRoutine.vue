@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="container bg-white text-center pt-1">
+    <Header/>
+    <div class="container bg-white text-center pt-1 mt-3">
       <h3>¿Generar una Rutina?</h3>
     </div>
    
@@ -44,13 +45,21 @@
         </div>
       </div>
     </div>
+    <Footer class="mt-4"/>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+
 export default {
   name: "makeRutine",
+  components: {
+    Header,
+    Footer
+  },
   data: function () {
     return {
       json: { "fk_cuerpo": "", "fk_tipo": "", "userid": "" },

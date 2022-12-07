@@ -4,7 +4,7 @@
             <Header></Header>
             <div class="mt-4">
                 <h3 class="text-light">
-                    usuarios
+                    Ejercicios
                 </h3>
                 <div class="table-responsive text-center">
                     <table class="table text-light">
@@ -12,12 +12,8 @@
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Apellidos</th>
-                                <th scope="col">Edad</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Experiencia</th>
-                                <th scope="col">Rol</th>
-                                <th scope="col">Acción</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody class="text-center">
@@ -25,14 +21,10 @@
                                 <th scope="row"></th>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                                 <td class="form-group">
                                     <button class="btn btn-info mt-1"
                                         style="font-size: auto; width: auto; margin-right: 10px;"
-                                        v-on:click="goToPage('/editarUsuario')">editar</button>
+                                        v-on:click="goToPage('/editarEjercicio')">editar</button>
                                     <button class="btn btn-danger mt-1">eliminar</button>
                                 </td>
                             </tr>
@@ -42,22 +34,20 @@
                             nextLabel="Siguente"></pagination-controls> -->
                 </div>
                 <div class="btns text-center">
-                    <button class="btn btn-info">¿Quieres agregar un entrenador?</button>
+                    <button class="btn btn-info">Agregar ejercicio</button>
                 </div>
+                <br>
             </div>
         </div>
-        <br><br><br>
-        <Footer />
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
-// import axios from "axios";
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
-    name: "UsuariosView",
     components: {
         Header,
         Footer
@@ -69,14 +59,10 @@ export default {
     },
     methods: {
         goToPage(page) { this.$router.push(page); },
-    }
+    },
 }
 </script>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        .container {
-            font-family: 'Bebas Neue';
-            width: auto;
-        }
+<style>
+
 </style>

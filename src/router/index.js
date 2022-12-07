@@ -6,6 +6,7 @@ import altaEntrenadores from '../views/viewsRulasRutine/altaEntrenadores.vue'
 import makeRoutine from '../views/viewsRulasRutine/makeRoutine.vue'
 import Niveles from '../views/viewsRulasRutine/niveles.vue'
 import tablaUsuariosVue from '../views/viewsRulasRutine/tabla-usuarios.vue'
+import tablaEjerciciosVue from '@/views/viewsRulasRutine/tabla-ejercicios.vue'
 import Profile from '../views/viewsRulasRutine/perfil.vue'
 import Historial from '../views/viewsRulasRutine/historial.vue'
 import UpdateUser from '../views/viewsRulasRutine/editarPerfil.vue'
@@ -14,6 +15,10 @@ import Felicidades from '../views/viewsRulasRutine/felicidades.vue'
 import Blog from '../views/viewsRulasRutine/Blog.vue'
 import RutinaEjercicio from '@/views/viewsRulasRutine/Rutina-Ejercicio.vue'
 import prueba from '@/views/viewsRulasRutine/prueba.vue'
+import EditarEjercicio from '../views/viewsRulasRutine/editarEjercicio.vue'
+import EditarUsuario from '../views/viewsRulasRutine/editarUsuario.vue'
+
+
 
 //other
 import Vue from 'vue'
@@ -34,16 +39,13 @@ import alerta from '../views/testAlertas.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  // RUTAS NUEVAS - INICIO rulas routine
+  /**
+   * Rutas Rulas Rutine
+   */
   {
     path: '/',
     name: 'Blog',
     component: Blog
-  },
-  {
-    path: '/usuarios',
-    name: 'usuarios',
-    component: tablaUsuariosVue
   },
   {
     path: '/login',
@@ -112,8 +114,46 @@ const routes = [
     name: 'congratulations',
     component: Felicidades
   },
+  // {
+  //   path: '/editarEjercicio/:id',
+  //   name: 'editarEjercicio',
+  //   component: EditarEjercicio
+  // },
+  // {
+  //   path: '/editarUsuario/:id',
+  //   name: 'editarUsuario',
+  //   component: EditarUsuario
+  // },
+  {
+    path: '/editarEjercicio',
+    name: 'editarEjercicio',
+    component: EditarEjercicio
+  }, {
+    path: '/editarUsuario',
+    name: 'editarUsuario',
+    component: EditarUsuario
+  },
+  {
+    path: '/tabla-ejercicios',
+    name: 'tabla-ejercicios',
+    component: tablaEjerciciosVue
+  },
+  {
+    path: '/tabla-usuarios',
+    name: 'tabla-usuarios',
+    component: tablaUsuariosVue
+  },
 
-  //other
+
+
+
+
+
+  /**
+   * No Mover Aqui
+   * 
+   * Otro Proyecto 
+   */
   {
     path: '/dashboard',
     name: 'dashboard',

@@ -1,12 +1,11 @@
 <template>
-  <div>
+<div>
     <Header/>
   <div class="title bg-white text-end mb-5">
     <h1 id="titulo">Historial</h1>
   </div>
-    <div class="container">
- 
-  <div class="row mt-4 mb-5 justify-content-center">
+  <div class="container"> 
+    <div class="row mt-4 mb-5 justify-content-center">
       <div class="col-lg-8 col-12">
         <div class="card">
           <div class="card-body text-center">
@@ -44,19 +43,23 @@
       <div class="col-lg-4 col-12" style="text-align:center"> 
         <span style="color:aliceblue; font-size:13em" class="material-symbols-outlined">sports_gymnastics</span> 
       </div>
+    </div>
   </div>
+  <Footer />
 </div>
-  </div>
- 
 </template>
 
 <script>
 import axios from "axios";
-import Header from '../../components/Header.vue';
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: "HistorialView",
-  components: {Header},
+  components: {
+    Header,
+    Footer
+  },
   data() {
     return {
       pesos:{"first":0,"last":0,"perdio":0},

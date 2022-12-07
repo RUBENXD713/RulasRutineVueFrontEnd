@@ -31,7 +31,8 @@
                                 <td></td>
                                 <td class="form-group">
                                     <button class="btn btn-info mt-1"
-                                        style="font-size: auto; width: auto; margin-right: 10px;">editar</button>
+                                        style="font-size: auto; width: auto; margin-right: 10px;"
+                                        v-on:click="goToPage('/editarUsuario')">editar</button>
                                     <button class="btn btn-danger mt-1">eliminar</button>
                                 </td>
                             </tr>
@@ -66,6 +67,9 @@ export default {
             
         }
     },
+    methods: {
+        goToPage(page) { this.$router.push(page); },
+    }
 }
 </script>
 

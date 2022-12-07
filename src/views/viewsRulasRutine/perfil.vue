@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="container">
+      <Header/>
       <br />
       <div class="row" id="card-user">
         <div class="col-sm">
@@ -37,7 +38,7 @@
               <!-- Button trigger modal -->
               <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-primary col-sm text-center"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal">
                 Actualiza tu peso
@@ -73,7 +74,7 @@
             <form action="" v-on:submit.prevent="setWeight">
               <div class="col-sm">
                 <span>Peso</span>
-                <input type="text" name="" id="" class="form-control" v-model="peso"/>
+                <input type="text" name="" id="update-peso" class="form-control" v-model="peso"/>
               </div>
               <div class="modal-footer">
             <button type="submit" class="btn btn-success">Actualizar</button>
@@ -84,15 +85,21 @@
       </div>
     </div>
     <br />
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: "ProfileView",
-  components: {},
+  components: {
+    Header,
+    Footer
+  },
   data() {
     return {
       user: {},
@@ -203,5 +210,9 @@ export default {
   .perfilImg {
     width: 90px;
   }
+}
+
+#update-peso{
+  background: #D9D9D9;
 }
 </style>

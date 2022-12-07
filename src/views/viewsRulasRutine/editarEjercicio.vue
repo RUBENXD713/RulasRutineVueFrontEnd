@@ -18,13 +18,13 @@
                     <input type="text" name="" id="" class="form-control" v-model='user.name'>
                   </div>
                   <div class="col-sm">
-                    <span>Apellidos</span>
+                    <span>Descripcion</span>
                     <input type="text" name="" id="" class="form-control" v-model='user.lastName'>
                   </div>
                 </div>
                 <div class="row align-items-*">
                   <div class="col-sm">
-                    <span>Edad</span>
+                    <span>URL</span>
                     <input type="text" name="" id="" class="form-control" v-model='user.age'>
                   </div>
                   <div class="col-sm">
@@ -38,7 +38,7 @@
                   </div>
                   <br><br>
                   <div class="col-sm">
-                    <button class="btn btn-danger" v-on:click="goToPage('/profile')">Cancelar</button>
+                    <button class="btn btn-danger" v-on:click="goToPage('/tabla-ejercicio')">Cancelar</button>
                   </div>
                 </div>
               </form>

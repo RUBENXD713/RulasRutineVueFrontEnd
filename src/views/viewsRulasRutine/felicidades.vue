@@ -11,16 +11,20 @@
         <button class="btn" v-on:click="goToPage('/')">Terminar</button>
       </div>
     </div>
-    <br />
+    <Footer class="mt-4"/>
   </div>
 </template>
 
 <script>
 //import axios from "axios";
+import Footer from '@/components/Footer.vue'
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "FelicitacionesView",
-  components: {},
+  components: {
+    Footer
+  },
   data() {
     return {
       tiempo: "",

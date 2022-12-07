@@ -8,7 +8,7 @@
               <div class="sub-menu">
                 <div class="uer-info">
                   <img src="../assets/rulasRutineAssets/usuario.png">
-                  <h3>{{ user.name }}</h3>
+                  <h3 style="font-size: 25px;">{{ user.name }}</h3>
                 </div>
                 <hr>
                 <!-- Usuario normal -->

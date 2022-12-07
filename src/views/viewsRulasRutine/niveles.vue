@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <div class="container">
       <br />
       <div class="row">
@@ -166,15 +167,24 @@
         <p></p>
       </div>
     </div>
-    <br />
+    <Footer class="mt-4"/>
   </div>
 </template>
 
 <script>
+/**
+ * Importaciones
+ */
 import axios from "axios";
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+
 export default {
   name: "nivelesView",
-  components: {},
+  components: {
+    Header,
+    Footer
+  },
   data() {
     return {
       userLevel: {},

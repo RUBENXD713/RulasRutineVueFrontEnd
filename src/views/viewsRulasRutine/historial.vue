@@ -1,52 +1,60 @@
 <template>
-  <div class="container">
-  <app-navbar></app-navbar>
-  <div class="title bg-white text-end mb-5">
-    <h5 id="titulo">Historial</h5>
-  </div>
-  <div class="row mt-4 mb-5 justify-content-center">
-      <div class="col-lg-10 col-12">
-        <div class="card">
-          <div class="card-body text-center">
-            <div class="row align-items-* mt-2">
+  <div>
+    <div class="container">
+      <Header />
+      <div class="title bg-white text-end mb-5">
+        <h5 id="titulo">Historial</h5>
+      </div>
+      <div class="row mt-4 mb-5 justify-content-center">
+        <div class="col-lg-10 col-12">
+          <div class="card">
+            <div class="card-body text-center">
+              <div class="row align-items-* mt-2">
+                <div class="col-sm">
+                  <h3>Tu peso Inicial:</h3>
+                </div>
+                <div class="col-sm">
+                  <h3 formControlName="peso">{{ pesos.first }} <sup>KG</sup></h3>
+                </div>
+              </div>
+    
+            </div>
+            <div class="row align-items-* mt-4">
               <div class="col-sm">
-                <h3>Tu peso Inicial:</h3>
+                <h3 v-if="(pesos.perdio > 0)">Peso Perdido:</h3>
+                <h3 v-if="(pesos.perdio < 0)">Peso Ganado:</h3>
               </div>
               <div class="col-sm">
-                <h3 formControlName="peso">{{pesos.first}} <sup>KG</sup></h3>
+                <h2>{{ pesos.perdio }} <sup>Kg</sup></h2>
               </div>
             </div>
-
-          </div>
-          <div class="row align-items-* mt-4">
-            <div class="col-sm">
-              <h3 v-if="(pesos.perdio > 0)">Peso Perdido:</h3>
-              <h3 v-if="(pesos.perdio < 0)">Peso Ganado:</h3>
-            </div>
-            <div class="col-sm">
-              <h2>{{pesos.perdio}} <sup>Kg</sup></h2>
-            </div>
-          </div>
-          <div class="row align-items-start mt-3">
-            <div class="col-sm">
-              <h3>Tu peso actual:</h3>
-            </div>
-            <div class="col-sm">
-              <h2>{{pesos.last}} <sup>KG</sup></h2>
+            <div class="row align-items-start mt-3">
+              <div class="col-sm">
+                <h3>Tu peso actual:</h3>
+              </div>
+              <div class="col-sm">
+                <h2>{{ pesos.last }} <sup>KG</sup></h2>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <Footer />
   </div>
-</div>
 </template>
 
 <script>
 import axios from "axios";
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: "HistorialView",
-  components: {},
+  components: {
+    Header,
+    Footer
+  },
   data() {
     return {
       pesos:{"first":0,"last":0,"perdio":0},

@@ -10,7 +10,7 @@
           <div class="text-center" style="margin-top: -25px">
             <img width="120" alt="" />
           </div>
-          <form action="" >
+          <form action="" v-on:submit.prevent="Registro">
             <div class="row align-items-*">
               <div class="col-sm">
                 <span>Nombre</span>
@@ -19,6 +19,7 @@
                   name=""
                   id=""
                   class="form-control"
+                  v-model="name"
                 />
               </div>
               <div class="col-sm">
@@ -28,6 +29,7 @@
                   name=""
                   id=""
                   class="form-control"
+                  v-model="lastName"
                 />
               </div>
             </div>
@@ -40,6 +42,7 @@
                   id=""
                   class="form-control"
                   value=""
+                  v-model="age"
                 />
               </div>
               <div class="col-sm">
@@ -49,7 +52,7 @@
                   name=""
                   id=""
                   class="form-control"
-                  value="Entrenador"
+                  value="entrenador"
                   disabled
                 />
               </div>
@@ -62,6 +65,20 @@
                   name=""
                   id=""
                   class="form-control"
+                  v-model="email"
+                />
+              </div>
+            </div>
+            <div class="row align-items-*">
+              <div class="col-sm-12">
+                <span>Password</span>
+                <input
+                  type="email"
+                  name=""
+                  id=""
+                  class="form-control"
+                  value="Tu contraseña 3312"
+                  disabled
                 />
               </div>
             </div>
@@ -78,7 +95,57 @@
 </div>
 </template>
 }
-<script></script>
+
+
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "RegistroView",
+  components: {},
+  data() {
+    return {
+      email: "",
+      password: "3312",
+      name:"",
+      age:"",
+      lastName:"",
+      error: false,
+      error_msg: "",
+      URL: process.env.VUE_APP_API_HOST,
+    };
+  },
+  async mounted() {
+    
+  },
+  methods: {
+    Registro() {
+      let json = {
+        email: this.email,
+        password: this.password,
+        name: this.name,
+        age: this.age,
+        lastName: this.lastName,
+      };
+      axios.post(process.env.VUE_APP_API_HOST + "usr/register_entrenador",json, {
+          headers: {
+            Authorization: `Bearer ${localStorage.token}`,
+          },
+        })
+        .then(() => {
+          this.goToPage('/');
+        })
+        .catch((e) => (this.err = e));
+    },
+    goToPage(page) {this.$router.push(page);},
+  },
+};
+</script>
+
+
+
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 

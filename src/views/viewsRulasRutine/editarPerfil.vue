@@ -37,7 +37,7 @@
                 </div>
                 <br><br>
                 <div class="col-sm">
-                    <button class="btn btn-danger">Cancelar</button>
+                    <button class="btn btn-danger" v-on:click="goToPage('/')">Cancelar</button>
                 </div>
               </div>
             </form>
@@ -93,6 +93,7 @@ export default {
         })
         .catch((e) => (this.err = e));
     },
+    goToPage(page) {this.$router.push(page);},
   },
 };
 </script>

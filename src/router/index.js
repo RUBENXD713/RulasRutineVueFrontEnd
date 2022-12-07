@@ -1,6 +1,13 @@
 //RulasRutine
 import Login from '../views/viewsRulasRutine/login.vue';
 import Registro from '../views/viewsRulasRutine/register.vue';
+import Blog from '../views/viewsRulasRutine/Blog.vue';
+import RutinaEjercicio from '../views/viewsRulasRutine/Rutina-Ejercicio';
+
+import prueba from '../views/viewsRulasRutine/prueba.vue'
+
+import JwPagination from 'jw-vue-pagination'
+Vue.component('jw-pagination',JwPagination)
 
 //other
 import Vue from 'vue'
@@ -29,10 +36,26 @@ const routes = [
     component: Login
   },
   {
+    path: '/prueba',
+    name: 'prueba',
+    component: prueba
+  },
+  {
     path: '/register',
     name: 'register',
     component: Registro
   },
+  {
+    path: '/Blog',
+    name: 'Blog',
+    component: Blog
+  },
+  {
+    path: '/Rutina-Ejercicio',
+    name: 'Rutina-Ejercicio',
+    component: RutinaEjercicio
+  },
+  
   {
     path: '/dashboard',
     name: 'dashboard',

@@ -20,7 +20,8 @@
           </div>
           <div class="row align-items-* mt-4">
             <div class="col-sm">
-              <h3>Peso Perdido:</h3>
+              <h3 v-if="(pesos.perdio > 0)">Peso Perdido:</h3>
+              <h3 v-if="(pesos.perdio < 0)">Peso Ganado:</h3>
             </div>
             <div class="col-sm">
               <h2>{{pesos.perdio}} <sup>Kg</sup></h2>

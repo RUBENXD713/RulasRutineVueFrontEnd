@@ -12,7 +12,6 @@ import Historial from '../views/viewsRulasRutine/historial.vue'
 import UpdateUser from '../views/viewsRulasRutine/editarPerfil.vue'
 import RegistrarPeso from '../views/viewsRulasRutine/registrarPeso.vue'
 import Felicidades from '../views/viewsRulasRutine/felicidades.vue'
-
 import Blog from '../views/viewsRulasRutine/Blog.vue'
 import RutinaEjercicio from '@/views/viewsRulasRutine/Rutina-Ejercicio.vue'
 import prueba from '@/views/viewsRulasRutine/prueba.vue'
@@ -43,12 +42,17 @@ const routes = [
     component: tablaEjerciciosVue
   },
   {
+    path: '/',
+    name: 'Blog',
+    component: Blog
+  },
+  {
     path: '/tabla-usuarios',
     name: 'usuarios',
     component: tablaUsuariosVue
   },
   {
-    path: '/',
+    path: '/login',
     name: 'login',
     component: Login
   },
@@ -61,11 +65,6 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Registro
-  },
-  {
-    path: '/Blog',
-    name: 'Blog',
-    component: Blog
   },
   {
     path: '/Rutina-Ejercicio',
@@ -119,8 +118,6 @@ const routes = [
     name: 'congratulations',
     component: Felicidades
   },
-
-
 
   //other
   {

@@ -37,7 +37,7 @@
                 </div>
                 <br><br>
                 <div class="col-sm">
-                    <button class="btn btn-danger" v-on:click="goToPage('/')">Cancelar</button>
+                    <button class="btn btn-danger" v-on:click="goToPage('/profile')">Cancelar</button>
                 </div>
               </div>
             </form>
@@ -78,7 +78,8 @@ export default {
         headers: {
               'Authorization': `Bearer ${localStorage.token}`
                 }
-        }).then((response) => {console.log(response)}).catch((e) => console.log(e));
+        }).then((response) => {console.log(response);
+        this.goToPage('/profile')}).catch((e) => console.log(e));
     },
     getPerfil() {
       axios

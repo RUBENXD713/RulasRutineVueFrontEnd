@@ -44,7 +44,7 @@
                 <div class="col-sm">
                   <span>¿No tienes cuenta?</span>
                   <div>
-                    <a href="/registro">Registrate</a>
+                    <a href="" v-on:click="goToPage('/register')">Registrate</a>
                   </div>
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default {
     }
 
     if (localStorage.token != "") {
-      this.$router.push("dashboard");
+      this.$router.push("/");
     }
   },
   methods: {
@@ -93,8 +93,11 @@ export default {
         console.log(data);
         localStorage.token = data.data.token;
         this.error = false;
-        this.$router.push("/dashboard");
+        this.$router.push("/");
       });
+    },
+    goToPage(page) {
+      this.$router.push(page);
     },
   },
 };

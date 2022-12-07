@@ -231,10 +231,12 @@ export default {
     }
 
     if (localStorage.token != "") {
-      this.$router.push("dashboard");
+      //this.$router.push("dashboard");
     }
   },
-  methods: {
+  methods: {goToPage(page) {
+      this.$router.push(page);
+    }
   },
 };
 </script>

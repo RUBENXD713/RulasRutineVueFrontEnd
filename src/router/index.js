@@ -1,13 +1,16 @@
 //RulasRutine
-import Login from '../views/viewsRulasRutine/login.vue';
-import Registro from '../views/viewsRulasRutine/register.vue';
-import Blog from '../views/viewsRulasRutine/Blog.vue';
-import RutinaEjercicio from '../views/viewsRulasRutine/Rutina-Ejercicio';
-
-import prueba from '../views/viewsRulasRutine/prueba.vue'
-
-import JwPagination from 'jw-vue-pagination'
-Vue.component('jw-pagination',JwPagination)
+import Login from '../views/viewsRulasRutine/login.vue'
+import Registro from '../views/viewsRulasRutine/register.vue'
+import altaEjercicios from '../views/viewsRulasRutine/altaEjercicios.vue'
+import altaEntrenadores from '../views/viewsRulasRutine/altaEntrenadores.vue'
+import makeRoutine from '../views/viewsRulasRutine/makeRoutine.vue'
+import Niveles from '../views/viewsRulasRutine/niveles.vue'
+import tablaUsuariosVue from '../views/viewsRulasRutine/tabla-usuarios.vue'
+import Profile from '../views/viewsRulasRutine/perfil.vue'
+import Historial from '../views/viewsRulasRutine/historial.vue'
+import UpdateUser from '../views/viewsRulasRutine/editarPerfil.vue'
+import RegistrarPeso from '../views/viewsRulasRutine/registrarPeso.vue'
+import Felicidades from '../views/viewsRulasRutine/felicidades.vue'
 
 //other
 import Vue from 'vue'
@@ -23,13 +26,17 @@ import ejemplo from '../views/Ejemplo.vue'
 import servicios from '../views/Servicios.vue'
 import notfount from '../views/error404.vue'
 import alerta from '../views/testAlertas.vue'
-//import Consultar from '../views/ConsultaMascota.vue' 
-
-
+//import Consultar from '../views/ConsultaMascota.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  // RUTAS NUEVAS - INICIO rulas routine
+  {
+    path: '/usuarios',
+    name: 'usuarios',
+    component: tablaUsuariosVue
+  },
   {
     path: '/',
     name: 'login',
@@ -55,20 +62,69 @@ const routes = [
     name: 'Rutina-Ejercicio',
     component: RutinaEjercicio
   },
-  
+  {
+    path: '/altaEjercicios',
+    name: 'altaEjercicios',
+    component: altaEjercicios
+  },
+  {
+    path: '/altaEntrenadores',
+    name: 'altaEntrenadores',
+    component: altaEntrenadores
+  },
+  {
+    path: '/makeRoutine',
+    name: 'makeRoutine',
+    component: makeRoutine
+  },
+  {
+    path: '/niveles',
+    name: 'niveles',
+    component: Niveles
+  },
+  // RUTAS NUEVAS - FIN rulas routine
+  //rutas viejas - inicio
+  {
+    path: '/register_weight',
+    name: 'register_weight',
+    component: RegistrarPeso
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
+  },
+  {
+    path: '/history',
+    name: 'history',
+    component: Historial
+  },
+  {
+    path: '/update_profile',
+    name: 'update_profile',
+    component: UpdateUser
+  },
+  {
+    path: '/congratulations',
+    name: 'congratulations',
+    component: Felicidades
+  },
   {
     path: '/dashboard',
     name: 'dashboard',
-    component:Dashboard
-  },{
+    component: Dashboard
+  },
+  {
     path: '/clientes',
     name: 'clienteBash',
     component: clientes
-  },{
+  },
+  {
     path: '/mascotas',
     name: 'mascotasBash',
     component: mascotas
-  },{
+  },
+  {
     path: '/consulta/:id',
     name: 'consultaMascota',
     component: consulta
@@ -107,8 +163,7 @@ const routes = [
     path: '*',
     name: 'error',
     component: notfount
-  },
-  
+  }
 ]
 
 const router = new VueRouter({

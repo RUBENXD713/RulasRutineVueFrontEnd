@@ -61,7 +61,7 @@ export default {
       localStorage.token = "";
     }
     if (localStorage.token != "") {
-      //this.getWeights();
+      this.getWeights();
     }
   },
   methods: {
@@ -73,9 +73,7 @@ export default {
           },
         })
         .then((response) => {
-          this.pesos.first = response.data.first;
-          this.pesos.last = response.data.last;
-          this.pesos.perdio =response.data.perdio;
+          this.pesos = response.data
           console.log(response);
           return;
         })

@@ -33,7 +33,7 @@
             <div class="detalles-info text-center">
               <br />
               <label for="">Peso actual</label>
-              <p>{{pesos}}</p>
+              <p>{{pesos.last}}</p>
               <!-- Button trigger modal -->
               <button
                 type="button"
@@ -127,8 +127,6 @@ export default {
         password: this.password,
       };
       axios.post(this.URL + "usr/log_in", json).then((data) => {
-        console.log(data);
-        console.log(data);
         localStorage.token = data.data.token;
         this.error = false;
         this.$router.push("/dashboard");

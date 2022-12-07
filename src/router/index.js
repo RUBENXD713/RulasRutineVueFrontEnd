@@ -113,6 +113,10 @@ const routes = [
     name: 'congratulations',
     component: Felicidades
   },
+
+
+
+  //other
   {
     path: '/dashboard',
     name: 'dashboard',
